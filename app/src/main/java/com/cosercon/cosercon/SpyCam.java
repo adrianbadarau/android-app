@@ -1,4 +1,6 @@
 package com.cosercon.cosercon;
+
+
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -8,7 +10,6 @@ import android.graphics.BitmapFactory;
 import android.hardware.Camera;
 import android.hardware.Camera.Parameters;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -78,7 +79,7 @@ public class SpyCam extends Activity implements SurfaceHolder.Callback
                 iv_image.setImageBitmap(bmp);
                 FileOutputStream outStream = null;
                 try{
-                    outStream = new FileOutputStream("/Image"+System.currentTimeMillis()+".jpg");
+                    outStream = new FileOutputStream("/sdcard/Image"+System.currentTimeMillis()+".jpg");
                     outStream.write(data);
                     outStream.close();
                 } catch (FileNotFoundException e){

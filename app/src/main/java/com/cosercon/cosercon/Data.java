@@ -41,11 +41,24 @@ public class Data extends Activity implements View.OnClickListener {
                 Bundle basket = new Bundle();
                 basket.putString("data", bread);
                 Intent a = new Intent(Data.this, OpenedClass.class);
+                a.putExtras(basket);
                 startActivity(a);
                 break;
             case R.id.bSAFR:
-                //
+                Intent i = new Intent(Data.this, OpenedClass.class);
+                startActivityForResult(i, 0);
                 break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK){
+            Bundle basket = data.getExtras();
+            String s = basket.getString("answer");
+            get.setText(s);
+
         }
     }
 }
