@@ -2,7 +2,9 @@ package com.cosercon.cosercon;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
@@ -23,6 +25,12 @@ public class OpenedClass extends Activity implements View.OnClickListener, Radio
         super.onCreate(savedInstanceState);
         setContentView(R.layout.send);
         initialize();
+        SharedPreferences getData = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        String et = getData.getString("name","Admin");
+        String values = getData.getString("list","Hello");
+        if (values.contentEquals("Item 1")){
+            question.setText(et);
+        }
        /* Bundle gotBasket = getIntent().getExtras();
         gotBread = gotBasket.getString("data");
         question.setText(gotBread);*/

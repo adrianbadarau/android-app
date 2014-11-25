@@ -2,8 +2,11 @@ package com.cosercon.cosercon;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Shader;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 
 /**
  * Created by adrian.badarau on 11/11/2014.
@@ -14,7 +17,10 @@ public class Splash extends Activity {
         super.onCreate(CoserconTest);
         setContentView(R.layout.spash);
         ourSong = MediaPlayer.create(Splash.this, R.raw.button_press);
-        ourSong.start();
+        SharedPreferences getPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        boolean music = getPrefs.getBoolean("checkbox", true);
+        if (music) ourSong.start();
+
         Thread timer = new Thread(){
          public void run(){
           try{

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lorem ipsum dolor sit amet, qui modus vivendum ut, vix at oratio salutatus disputando, an rebum causae similique his. No eius movet argumentum eum, ne inciderint definitiones eam. Mel in unum inani, ad ipsum viris maiestatis eum. Vis in saepe cetero, eam choro feugiat albucius id, duo ei debet tibique. Eos sapientem suscipiantur an, eum simul laboramus constituam at."
+        android:id="@+id/tvMessage1"/>
+
+</LinearLayout>
